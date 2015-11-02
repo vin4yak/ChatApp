@@ -1,5 +1,7 @@
 package com.chatapp.repository;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -14,6 +16,10 @@ public class UserRepository {
 	
 	@Autowired
 	private MongoOperations mongoOperations;
+	
+	public List<User> getUsers(){
+		return mongoOperations.findAll(User.class, "User");
+	}
 	
 	public void createUser(User user){
 		mongoOperations.save(user);

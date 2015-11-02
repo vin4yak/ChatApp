@@ -5,11 +5,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 	$urlRouterProvider.otherwise('/');
         
 	 $stateProvider
-	    .state('main', {url:'/', views: {'': {templateUrl: 'index.html', controller: 'userController'}}});
+	    .state('register', {url:'/', views: {'': {templateUrl: '/views/register.html', controller: 'registerController'}}})
+	    .state('login', {url:'/login', views: {'': {templateUrl: '/views/login.html', controller: 'loginController'}}});
     
 }]);
-/*
+
 app.config(function(blockUIConfig) {
 	  blockUIConfig.message = 'Loading...';
 });
-*/

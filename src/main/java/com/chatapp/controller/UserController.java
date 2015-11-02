@@ -1,5 +1,7 @@
 package com.chatapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,12 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public List<User> getUsers(){
+		List<User> userList = userService.getUsers();
+		return userList;
+	}
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public void createUser(@RequestBody(required=true) User user){
