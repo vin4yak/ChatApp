@@ -6,4 +6,4 @@ You need to have Java, Gradle and Git setup in your workspace.
 2. Run following command: gradle eclipse clean build
 3. After building it, run following command: gradle bootRun
 
-Open http:localhost:8080/
+Open http://localhost:8080/
